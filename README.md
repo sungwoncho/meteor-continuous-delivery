@@ -6,6 +6,8 @@ A sample meteor app using TravisCI for continuous delivery, with test running on
 It uses [Meteor Up](https://github.com/arunoda/meteor-up) to deploy to a server
 whenever a build passes on `prod` branch.
 
+[Blog article](https://sungwoncho.io/meteorjs-continuous-delivery)
+
 ## Use in your app
 
 1. Copy `.travis.yml` to your app.
@@ -23,7 +25,7 @@ authentication, it needs your pem file.
 
  ```
  travis encrypt-file secrets.tar
- ``` 
+ ```
 
 4. Replace the decrypt script in `.travis.yml` with the one given by the previous command.
 
