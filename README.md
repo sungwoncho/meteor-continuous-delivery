@@ -13,7 +13,7 @@ Copy `.travis.yml` to your app.
 Meteor up uses `mup.json` and `settings.json`. If you are using a private key for
 authentication, it needs your pem file.
 
-Compress those files:
+Compress those files (name does not matter):
 
     tar cvf secrets.tar mup.json settings.json private_key
 
@@ -22,14 +22,6 @@ Encrypt `secrets.tar` to `secrests.tar.enc`:
     travis encrypt-file secrets.tar
 
 Replace the decrypt script in `.travis.yml` with the one given by the previous command.
-
-## Customize branch to deploy
-
-If you want to deploy from a branch other than `prod`, just copy `deploy.sh` to
-your app and change `prod` to something else.
-
-Change the `after_success` script in your `.travis.yml` to run your deploy.sh (e.g. `./deploy.sh`).
-Make sure it is executable. Run `chmod +x deploy.sh`.
 
 ## Note
 
@@ -50,6 +42,17 @@ Configure otherwise depending on your need.
 
 * If not using `settings.json`, you don't need to specify `--settings settings.json`
 in `script` in your `.travis.yml`.
+
+* Do not check in `mupx.json`, `settings.json`, `secrets.tar` or your private key
+to the source control. Only commit `secrets.tar.enc`.
+
+## Customize branch to deploy
+
+If you want to deploy from a branch other than `prod`, just copy `deploy.sh` to
+your app and change `prod` to something else.
+
+Change the `after_success` script in your `.travis.yml` to run your deploy.sh (e.g. `./deploy.sh`).
+Make sure it is executable. Run `chmod +x deploy.sh`.
 
 ## Contributing
 
