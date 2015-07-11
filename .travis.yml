@@ -6,6 +6,11 @@ before_install:
 - curl https://install.meteor.com/ | sh
 - npm install -g mupx
 
+- openssl aes-256-cbc -K $encrypted_57efc54cf7a8_key -iv $encrypted_57efc54cf7a8_iv
+  -in secrets.tar.enc -out secrets.tar -d
+- tar xvf secrets.tar
 services: mongodb
 script:
 - meteor --test --release velocity:METEOR@1.1.0.2_3
+after_success:
+  - ./deploy.sh
