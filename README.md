@@ -10,20 +10,20 @@ whenever a build passes on `prod` branch.
 
 1. Copy `.travis.yml` to your app.
 
-Meteor up uses `mup.json` and `settings.json`. If you are using a private key for
+ Meteor up uses `mup.json` and `settings.json`. If you are using a private key for
 authentication, it needs your pem file.
 
 2. Compress those files (name does not matter):
 
-```
-tar cvf secrets.tar mup.json settings.json private_key
-```
+ ```
+ tar cvf secrets.tar mup.json settings.json private_key
+ ```
 
 3. Encrypt `secrets.tar` to `secrests.tar.enc`:
 
-```
-travis encrypt-file secrets.tar
-```
+ ```
+ travis encrypt-file secrets.tar
+ ``` 
 
 4. Replace the decrypt script in `.travis.yml` with the one given by the previous command.
 
