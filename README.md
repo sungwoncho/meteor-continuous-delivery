@@ -8,20 +8,20 @@ whenever a build passes on `prod` branch.
 
 ## Use in your app
 
-Copy `.travis.yml` to your app.
+1. Copy `.travis.yml` to your app.
 
 Meteor up uses `mup.json` and `settings.json`. If you are using a private key for
 authentication, it needs your pem file.
 
-Compress those files (name does not matter):
+2. Compress those files (name does not matter):
 
     tar cvf secrets.tar mup.json settings.json private_key
 
-Encrypt `secrets.tar` to `secrests.tar.enc`:
+3. Encrypt `secrets.tar` to `secrests.tar.enc`:
 
     travis encrypt-file secrets.tar
 
-Replace the decrypt script in `.travis.yml` with the one given by the previous command.
+4. Replace the decrypt script in `.travis.yml` with the one given by the previous command.
 
 ## Note
 
@@ -53,6 +53,13 @@ your app and change `prod` to something else.
 
 Change the `after_success` script in your `.travis.yml` to run your deploy.sh (e.g. `./deploy.sh`).
 Make sure it is executable. Run `chmod +x deploy.sh`.
+
+## Using MupX
+
+If you are using [mupx](https://github.com/arunoda/meteor-up/tree/mupx), 
+copy `deploy.sh` to your app and run it in the `after_success` script.
+
+Change `mup deploy` in `deploy.sh` to `mupx deploy`.
 
 ## Contributing
 
