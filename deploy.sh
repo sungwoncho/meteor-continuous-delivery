@@ -1,4 +1,4 @@
-# Trigger mupx deploy if current branch is 'prod'
+# Trigger mup deploy if current branch is 'prod'
 
 #!/bin/bash
 

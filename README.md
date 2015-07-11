@@ -1,7 +1,7 @@
 # Meteor Continuous Delivery [![Build Status](https://travis-ci.org/sungwoncho/meteor-continuous-delivery.svg?branch=master)](https://travis-ci.org/sungwoncho/meteor-continuous-delivery)
 
 A sample meteor app using TravisCI for continuous delivery, with test running on
-velocity and mocha.
+[velocity](https://github.com/meteor-velocity/velocity) and [mocha](https://github.com/mad-eye/meteor-mocha-web/).
 
 It uses [Meteor Up](https://github.com/arunoda/meteor-up) to deploy to a server
 whenever a build passes on `prod` branch.
@@ -24,6 +24,8 @@ authentication, it needs your pem file.
 4. Replace the decrypt script in `.travis.yml` with the one given by the previous command.
 
 ## Note
+
+* You need [console-reporter](https://github.com/meteor-velocity/console-reporter) for velocity.
 
 * If you follow the previous steps, all secret files (`mup.json`, `settings.json`, `private_key`)
 will live in the app root directory.
