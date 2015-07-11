@@ -56,11 +56,11 @@ Make sure it is executable. Run `chmod +x deploy.sh`.
 
 ## Using MupX
 
-If you are using [mupx](https://github.com/arunoda/meteor-up/tree/mupx), 
+If you are using [mupx](https://github.com/arunoda/meteor-up/tree/mupx),
 copy `deploy.sh` to your app and run it in the `after_success` script.
 
 Change `mup deploy` in `deploy.sh` to `mupx deploy`.
 
 ## Contributing
 
-Feel free to open a pull request if something becomes outdated.
+Feel free to open a pull request if something does not work or becomes outdated.

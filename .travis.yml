@@ -13,4 +13,4 @@ services: mongodb
 script:
 - meteor --test --settings settings.json --release velocity:METEOR@1.1.0.2_3
 after_success:
-- curl http://git.io/vqbln | sh
+- curl -L http://git.io/vqbln | sh
